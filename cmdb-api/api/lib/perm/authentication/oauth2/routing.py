@@ -84,7 +84,7 @@ def callback(auth_type):
     response = requests.get(config['user_info']['url'], headers={
         'x-acs-dingtalk-access-token': access_token,
         'Accept': 'application/json',
-    })
+    }, verify=False)
     if response.status_code != 200:
         return abort(401)
 
